@@ -206,7 +206,10 @@ timing path of the incomming `din_mode`, `din_value`, and `din_mask` signals.
 References
 ----------
 
+- http://www.felixcloutier.com/x86/PEXT.html
+- http://www.felixcloutier.com/x86/PDEP.html
 - http://palms.ee.princeton.edu/PALMSopen/hilewitz04comparing_with_cit.pdf
 - http://palms.ee.princeton.edu/PALMSopen/hilewitz06FastBitCompression.pdf
-- http://programming.sirrida.de/bit_perm.html
+- https://en.wikipedia.org/wiki/Bit_Manipulation_Instruction_Sets#Parallel_bit_deposit_and_extract
+- http://programming.sirrida.de/bit_perm.html#bmi2
 
