@@ -26,7 +26,7 @@ bextdep_pps.v: ppsmaker.py
 	python3 ppsmaker.py -f -i 1 -o 8 -n 64 -m bextdep_pps64f >> bextdep_pps.v.new
 	mv bextdep_pps.v.new bextdep_pps.v
 
-report: vscalealu32.rpt vscalealu64.rpt vscalealu64.vivlog vscalealu32.vivlog
+report: vscalealu32.rpt vscalealu64.rpt vscalealu64.vivlog vscalealu32.vivlog tinyrocket-src/OK
 	python3 report.py
 
 vscalealu64.rpt: vscalealu.v
@@ -42,6 +42,9 @@ vscalealu64.vivlog: vscalealu.v bextdep.v bextdep_pps.v vivado.tcl
 
 vscalealu32.vivlog: vscalealu.v bextdep.v bextdep_pps.v
 	top_module=vscalealu32 vivado -mode batch -nojournal -log $@ -source vivado.tcl
+
+tinyrocket-src/OK: tinyrocket.sh
+	bash tinyrocket.sh
 
 define coretpl =
 testbench$1$2: testbench.v bextdep.v bextdep_pps.v
