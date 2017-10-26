@@ -83,34 +83,34 @@ This are the 64 bit Verilog cores:
 
 | Name          |  Gates |    Rel |  Rel+G | Description                               |
 |:------------- | ------:| ------:| ------:|:----------------------------------------- |
-| `bextdep64g3` |   9669 |   2.02 |   2.02 | 3-stage pipeline with GREV                |
-| `bextdep64p3` |   8829 |   1.85 |   2.19 | 3-stage pipeline                          |
-| `bextdep64g2` |   8079 |   1.69 |   1.69 | 2-stage pipeline with GREV                |
-| `bextdep64p2` |   7207 |   1.51 |   1.85 | 2-stage pipeline                          |
-| `bextdep64g1` |   6341 |   1.33 |   1.33 | single-stage with GREV support            |
-| `bextdep64p1` |   5357 |   1.12 |   1.46 | single-stage implementation               |
-| `bextdep64sh` |   4313 |   0.90 |   1.24 | 4-cycles sequential implementation        |
-| `bextdep64sb` |   3476 |   0.73 |   1.07 | 8-cycles sequential implementation        |
-| `bextdep64sn` |   3206 |   0.67 |   1.01 | 16-cycles sequential implementation       |
-| `bextdep64sx` |   3314 |   0.69 |   1.04 | up-to-64-cycles sequential implementation |
-| `bextdep64go` |   1635 |   0.34 |   0.34 | single-stage GREV-only core               |
-| `vscalealu64` |   4778 |   1.00 |   1.34 | ALU from V-Scale CPU (for comparison)     |
+| `bextdep64g3` |   9670 |   1.98 |   1.98 | 3-stage pipeline with GREV                |
+| `bextdep64p3` |   8837 |   1.81 |   2.14 | 3-stage pipeline                          |
+| `bextdep64g2` |   8101 |   1.66 |   1.66 | 2-stage pipeline with GREV                |
+| `bextdep64p2` |   7178 |   1.47 |   1.80 | 2-stage pipeline                          |
+| `bextdep64g1` |   6282 |   1.29 |   1.29 | single-stage with GREV support            |
+| `bextdep64p1` |   5282 |   1.08 |   1.42 | single-stage implementation               |
+| `bextdep64sh` |   4289 |   0.88 |   1.21 | 4-cycles sequential implementation        |
+| `bextdep64sb` |   3481 |   0.71 |   1.05 | 8-cycles sequential implementation        |
+| `bextdep64sn` |   3182 |   0.65 |   0.99 | 16-cycles sequential implementation       |
+| `bextdep64sx` |   3314 |   0.68 |   1.01 | up-to-64-cycles sequential implementation |
+| `bextdep64go` |   1635 |   0.33 |   0.33 | single-stage GREV-only core               |
+| `vscalealu64` |   4884 |   1.00 |   1.33 | ALU from V-Scale CPU (for comparison)     |
 
 And this are the 32 bit Verilog cores:
 
 | Name          |  Gates |    Rel |  Rel+G | Description                               |
 |:------------- | ------:| ------:| ------:|:----------------------------------------- |
-| `bextdep32g3` |   4191 |   1.91 |   1.91 | 3-stage pipeline with GREV                |
-| `bextdep32p3` |   3833 |   1.75 |   2.08 | 3-stage pipeline                          |
-| `bextdep32g2` |   3444 |   1.57 |   1.57 | 2-stage pipeline with GREV                |
-| `bextdep32p2` |   3060 |   1.39 |   1.72 | 2-stage pipeline                          |
-| `bextdep32g1` |   2668 |   1.22 |   1.22 | single-stage with GREV support            |
-| `bextdep32p1` |   2219 |   1.01 |   1.34 | single-stage implementation               |
-| `bextdep32sb` |   1945 |   0.89 |   1.22 | 4-cycles sequential implementation        |
-| `bextdep32sn` |   1694 |   0.77 |   1.10 | 8-cycles sequential implementation        |
-| `bextdep32sx` |   1543 |   0.70 |   1.03 | up-to-32-cycles sequential implementation |
-| `bextdep32go` |    723 |   0.33 |   0.33 | single-stage GREV-only core               |
-| `vscalealu32` |   2194 |   1.00 |   1.33 | ALU from V-Scale CPU (for comparison)     |
+| `bextdep32g3` |   4191 |   1.88 |   1.88 | 3-stage pipeline with GREV                |
+| `bextdep32p3` |   3837 |   1.72 |   2.04 | 3-stage pipeline                          |
+| `bextdep32g2` |   3432 |   1.54 |   1.54 | 2-stage pipeline with GREV                |
+| `bextdep32p2` |   3040 |   1.36 |   1.69 | 2-stage pipeline                          |
+| `bextdep32g1` |   2598 |   1.16 |   1.16 | single-stage with GREV support            |
+| `bextdep32p1` |   2162 |   0.97 |   1.29 | single-stage implementation               |
+| `bextdep32sb` |   1949 |   0.87 |   1.20 | 4-cycles sequential implementation        |
+| `bextdep32sn` |   1693 |   0.76 |   1.08 | 8-cycles sequential implementation        |
+| `bextdep32sx` |   1543 |   0.69 |   1.02 | up-to-32-cycles sequential implementation |
+| `bextdep32go` |    723 |   0.32 |   0.32 | single-stage GREV-only core               |
+| `vscalealu32` |   2231 |   1.00 |   1.32 | ALU from V-Scale CPU (for comparison)     |
 
 The gate counts in the tables above are for the cores mapped to NAND, NOR, and
 NOT gates, and DFFs, with NOT counting as 0.5 gates and DFFs counting as 4
@@ -127,7 +127,8 @@ initiation interval (II) of the `bextdep32sb` core is 5 and the II of the
 `bextdep64sx` core is up to 65 (when all mask bits in the input are set).
 
 Here are the sizes and timings for the cores when mapped to a Xilinx UltraScale
-Kintex device (speed grade -3) with Vivado 2017.3:
+Kintex device (speed grade -3) with Vivado 2017.3. This evaluation also includes
+the Rocket "TinyConfig" core for size comparison:
 
 | Name          |   LUTs |    Rel |  Rel+G | Max Freq. |
 |:------------- | ------:| ------:| ------:| ---------:|
@@ -157,6 +158,8 @@ Kintex device (speed grade -3) with Vivado 2017.3:
 | `bextdep32sx` |    158 |   0.37 |   0.56 |   427 MHz |
 | `bextdep32go` |     83 |   0.19 |   0.19 |  1116 MHz |
 | `vscalealu32` |    431 |   1.00 |   1.00 |   819 MHz |
+| `tinyrocket`  |   4280 |   9.93 |  ----- |   211 MHz |
+
 
 Interfaces
 ----------

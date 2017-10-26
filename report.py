@@ -30,6 +30,8 @@ def gates(core_id, add_grev=False):
 def lutcount(core_id):
     if core_id.endswith("alu"):
         vivlog_file = "vscalealu%s.vivlog" % core_id[0:2]
+    elif core_id == "tinyrocket":
+        vivlog_file = "tinyrocket-src/vivado.log"
     else:
         vivlog_file = "bextdep%s.vivlog" % core_id
     with open(vivlog_file) as f:
@@ -44,6 +46,8 @@ def lutcount(core_id):
 def maxdelay(core_id):
     if core_id.endswith("alu"):
         vivlog_file = "vscalealu%s.vivlog" % core_id[0:2]
+    elif core_id == "tinyrocket":
+        vivlog_file = "tinyrocket-src/vivado.log"
     else:
         vivlog_file = "bextdep%s.vivlog" % core_id
     with open(vivlog_file) as f:
@@ -56,6 +60,12 @@ def maxdelay(core_id):
     return None
 
 def luts(core_id, add_grev=False):
+    if core_id == "tinyrocket":
+        luts_core = lutcount(core_id)
+        luts_ref = lutcount("32alu")
+        ns_delay = maxdelay(core_id)
+        return (luts_core, luts_core / luts_ref, 1000 / ns_delay)
+
     luts_core = lutcount(core_id)
     luts_core_grev = luts_core + (lutcount("%sgo" % core_id[0:2]) if add_grev else 0)
     luts_ref = lutcount("%salu" % core_id[0:2])
@@ -120,5 +130,6 @@ print("| `bextdep32sn` |  %5d |  %5.2f |  %5.2f |  %4d MHz |" % luts("32sn", Tru
 print("| `bextdep32sx` |  %5d |  %5.2f |  %5.2f |  %4d MHz |" % luts("32sx", True))
 print("| `bextdep32go` |  %5d |  %5.2f |  %5.2f |  %4d MHz |" % luts("32go"))
 print("| `vscalealu32` |  %5d |  %5.2f |  %5.2f |  %4d MHz |" % luts("32alu"))
+print("| `tinyrocket`  |  %5d |  %5.2f |  ----- |  %4d MHz |" % luts("tinyrocket"))
 print()
 
