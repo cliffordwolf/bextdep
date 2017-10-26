@@ -3,7 +3,7 @@ Reference Hardware Implementations of Bit Extract/Deposit Instructions
 ======================================================================
 
 The BEXT (bit extract, aka parallel extract, PEXT) instruction takes as
-arguments a value bit and a bit mask.  The bits in mask indicate which bits in
+arguments a value and a bit mask. The bits in the mask indicate which bits in
 the value should be extracted. All extracted bits are then packed into the LSB
 end of the result:
 
