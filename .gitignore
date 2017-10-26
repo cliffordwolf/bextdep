@@ -1,0 +1,6 @@
+/syn[36]*.rpt
+/syn[36]*.v
+/bextdep[36]*.vivlog
+/vscalealu[36]*.rpt
+/vscalealu[36]*.vivlog
+/tinyrocket-src/
