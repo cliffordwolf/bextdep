@@ -203,13 +203,28 @@ GREV support):
 All cores have FFs near the `dout_result` output, but may borrow from the
 timing path of the incomming `din_mode`, `din_value`, and `din_mask` signals.
 
+Why do you call those instructions BEXT/BDEP and not PEXT/PDEP like everyone else?
+----------------------------------------------------------------------------------
+
+Because the P in PEXT/PDEP stands for parallel and thus implies a certain
+implementation. That's just bad ISA naming. Imo an instruction name should
+describe what the instruction is doing, but leave it to the implementation
+to decide how to do it.
+
+Limitations, Todos and Future Work
+----------------------------------
+
+- The 3-stage pipelined cores don't have very well balanced pipeline stages
+
 References
 ----------
 
-- http://www.felixcloutier.com/x86/PEXT.html
-- http://www.felixcloutier.com/x86/PDEP.html
+- https://en.wikipedia.org/wiki/Bit_Manipulation_Instruction_Sets#Parallel_bit_deposit_and_extract
+- http://nbviewer.jupyter.org/url/svn.clifford.at/handicraft/2017/permsyn/data.ipynb
 - http://palms.ee.princeton.edu/PALMSopen/hilewitz04comparing_with_cit.pdf
 - http://palms.ee.princeton.edu/PALMSopen/hilewitz06FastBitCompression.pdf
-- https://en.wikipedia.org/wiki/Bit_Manipulation_Instruction_Sets#Parallel_bit_deposit_and_extract
+- http://svn.clifford.at/handicraft/2017/pdep_pext
 - http://programming.sirrida.de/bit_perm.html#bmi2
+- http://www.felixcloutier.com/x86/PEXT.html
+- http://www.felixcloutier.com/x86/PDEP.html
 
