@@ -31,11 +31,13 @@ report: vscalealu32.rpt vscalealu64.rpt vscalealu64.vivlog vscalealu32.vivlog ti
 
 vscalealu64.rpt: vscalealu.v
 	yosys -p "read_verilog vscalealu.v; synth -flatten -top vscalealu64" \
-		-p "abc -dff -g cmos2; opt -fast; tee -o vscalealu64.rpt stat"
+		-p "rename -hide; abc -dff -g cmos2; opt -fast" \
+		-p "tee -o vscalealu64.rpt stat; tee -a vscalealu64.rpt ltp -noff"
 
 vscalealu32.rpt: vscalealu.v
 	yosys -p "read_verilog vscalealu.v; synth -flatten -top vscalealu32" \
-		-p "abc -dff -g cmos2; opt -fast; tee -o vscalealu32.rpt stat"
+		-p "rename -hide; abc -dff -g cmos2; opt -fast" \
+		-p "tee -o vscalealu32.rpt stat; tee -a vscalealu32.rpt ltp -noff"
 
 vscalealu64.vivlog: vscalealu.v bextdep.v bextdep_pps.v vivado.tcl
 	top_module=vscalealu64 vivado -mode batch -nojournal -log $@ -source vivado.tcl
@@ -64,7 +66,8 @@ test$1$2_post: testbench$1$2_post testdata$1$3.hex
 report: syn$1$2.v
 syn$1$2.v: bextdep.v bextdep_pps.v
 	yosys -p "read_verilog bextdep.v bextdep_pps.v; synth -flatten -top bextdep$1$2" \
-		-p "abc -dff -g cmos2; opt -fast; tee -o syn$1$2.rpt stat; write_verilog syn$1$2.v"
+		-p "rename -hide; abc -dff -g cmos2; opt -fast; write_verilog syn$1$2.v" \
+		-p "tee -o syn$1$2.rpt stat; tee -a syn$1$2.rpt ltp -noff"
 
 report: bextdep$1$2.vivlog
 bextdep$1$2.vivlog: vscalealu.v bextdep.v bextdep_pps.v vivado.tcl

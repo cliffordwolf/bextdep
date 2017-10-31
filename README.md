@@ -81,36 +81,36 @@ Evaluation
 
 This are the 64 bit Verilog cores:
 
-| Name          |  Gates |    Rel |  Rel+G | Description                               |
-|:------------- | ------:| ------:| ------:|:----------------------------------------- |
-| `bextdep64g3` |   9670 |   1.98 |   1.98 | 3-stage pipeline with GREV                |
-| `bextdep64p3` |   8837 |   1.81 |   2.14 | 3-stage pipeline                          |
-| `bextdep64g2` |   8101 |   1.66 |   1.66 | 2-stage pipeline with GREV                |
-| `bextdep64p2` |   7178 |   1.47 |   1.80 | 2-stage pipeline                          |
-| `bextdep64g1` |   6282 |   1.29 |   1.29 | single-stage with GREV support            |
-| `bextdep64p1` |   5282 |   1.08 |   1.42 | single-stage implementation               |
-| `bextdep64sh` |   4289 |   0.88 |   1.21 | 4-cycles sequential implementation        |
-| `bextdep64sb` |   3481 |   0.71 |   1.05 | 8-cycles sequential implementation        |
-| `bextdep64sn` |   3182 |   0.65 |   0.99 | 16-cycles sequential implementation       |
-| `bextdep64sx` |   3314 |   0.68 |   1.01 | up-to-64-cycles sequential implementation |
-| `bextdep64go` |   1635 |   0.33 |   0.33 | single-stage GREV-only core               |
-| `vscalealu64` |   4884 |   1.00 |   1.33 | ALU from V-Scale CPU (for comparison)     |
+| Name          |  Gates |    Rel |  Rel+G | Delay | Description                               |
+|:------------- | ------:| ------:| ------:|------:|:----------------------------------------- |
+| `bextdep64g3` |   9672 |   2.00 |   2.00 |    22 | 3-stage pipeline with GREV                |
+| `bextdep64p3` |   8846 |   1.83 |   2.17 |    22 | 3-stage pipeline                          |
+| `bextdep64g2` |   8075 |   1.67 |   1.67 |    40 | 2-stage pipeline with GREV                |
+| `bextdep64p2` |   7140 |   1.48 |   1.82 |    40 | 2-stage pipeline                          |
+| `bextdep64g1` |   6406 |   1.33 |   1.33 |    49 | single-stage with GREV support            |
+| `bextdep64p1` |   5515 |   1.14 |   1.48 |    51 | single-stage implementation               |
+| `bextdep64sh` |   4324 |   0.90 |   1.24 |    33 | 4-cycles sequential implementation        |
+| `bextdep64sb` |   3589 |   0.74 |   1.08 |    24 | 8-cycles sequential implementation        |
+| `bextdep64sn` |   3192 |   0.66 |   1.00 |    17 | 16-cycles sequential implementation       |
+| `bextdep64sx` |   3123 |   0.65 |   0.99 |    71 | up-to-64-cycles sequential implementation |
+| `bextdep64go` |   1641 |   0.34 |   0.34 |    15 | single-stage GREV-only core               |
+| `vscalealu64` |   4825 |   1.00 |   1.34 |   131 | ALU from V-Scale CPU (for comparison)     |
 
 And this are the 32 bit Verilog cores:
 
-| Name          |  Gates |    Rel |  Rel+G | Description                               |
-|:------------- | ------:| ------:| ------:|:----------------------------------------- |
-| `bextdep32g3` |   4191 |   1.88 |   1.88 | 3-stage pipeline with GREV                |
-| `bextdep32p3` |   3837 |   1.72 |   2.04 | 3-stage pipeline                          |
-| `bextdep32g2` |   3432 |   1.54 |   1.54 | 2-stage pipeline with GREV                |
-| `bextdep32p2` |   3040 |   1.36 |   1.69 | 2-stage pipeline                          |
-| `bextdep32g1` |   2598 |   1.16 |   1.16 | single-stage with GREV support            |
-| `bextdep32p1` |   2162 |   0.97 |   1.29 | single-stage implementation               |
-| `bextdep32sb` |   1949 |   0.87 |   1.20 | 4-cycles sequential implementation        |
-| `bextdep32sn` |   1693 |   0.76 |   1.08 | 8-cycles sequential implementation        |
-| `bextdep32sx` |   1543 |   0.69 |   1.02 | up-to-32-cycles sequential implementation |
-| `bextdep32go` |    723 |   0.32 |   0.32 | single-stage GREV-only core               |
-| `vscalealu32` |   2231 |   1.00 |   1.32 | ALU from V-Scale CPU (for comparison)     |
+| Name          |  Gates |    Rel |  Rel+G | Delay | Description                               |
+|:------------- | ------:| ------:| ------:|------:|:----------------------------------------- |
+| `bextdep32g3` |   4214 |   1.91 |   1.91 |    16 | 3-stage pipeline with GREV                |
+| `bextdep32p3` |   3859 |   1.75 |   2.08 |    16 | 3-stage pipeline                          |
+| `bextdep32g2` |   3451 |   1.57 |   1.57 |    28 | 2-stage pipeline with GREV                |
+| `bextdep32p2` |   3062 |   1.39 |   1.72 |    27 | 2-stage pipeline                          |
+| `bextdep32g1` |   2616 |   1.19 |   1.19 |    38 | single-stage with GREV support            |
+| `bextdep32p1` |   2198 |   1.00 |   1.33 |    36 | single-stage implementation               |
+| `bextdep32sb` |   1976 |   0.90 |   1.22 |    24 | 4-cycles sequential implementation        |
+| `bextdep32sn` |   1670 |   0.76 |   1.09 |    17 | 8-cycles sequential implementation        |
+| `bextdep32sx` |   1543 |   0.70 |   1.03 |    39 | up-to-32-cycles sequential implementation |
+| `bextdep32go` |    721 |   0.33 |   0.33 |    13 | single-stage GREV-only core               |
+| `vscalealu32` |   2203 |   1.00 |   1.33 |    68 | ALU from V-Scale CPU (for comparison)     |
 
 The gate counts in the tables above are for the cores mapped to NAND, NOR, and
 NOT gates, and DFFs, with NOT counting as 0.5 gates and DFFs counting as 4
@@ -121,6 +121,9 @@ processor. (The 64-bit version is just the 32 bit ALU with extended bit-width,
 it does not support the RV64 `*W` opcodes. See `vscalealu.v`.) The "Rel+G"
 column lists the relative size when the size of a GREV core is added to the
 cores that don't implement GREV.
+
+The "Delay" column lists the number of date delays in the longest path from a
+primary input or FF output to a primary output or FF input.
 
 The sequential cores require an additional cycle for initialization. So the
 initiation interval (II) of the `bextdep32sb` core is 5 and the II of the
@@ -214,7 +217,8 @@ to decide how to do it.
 Limitations, Todos and Future Work
 ----------------------------------
 
-- The 3-stage pipelined cores don't have very well balanced pipeline stages
+- The 3-stage pipelined cores don't have very well balanced pipeline stages in
+  Vivado synthesis. This might be worth looking into.
 
 References
 ----------
